@@ -75,9 +75,9 @@ const Services: React.FC<ServicesProps> = ({ services }) => {
           <h2 className="text-3xl font-bold text-center mb-16 font-serif tracking-tight">Alur Pengerjaan Kami</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
-              { step: "01", title: "Konsultasi", desc: "Berdiskusi mengenai model, ukuran, dan lokasi." },
-              { step: "02", title: "Desain & Estimasi", desc: "Kami buatkan draft desain dan penawaran harga." },
-              { step: "03", title: "Produksi", desc: "Proses pemotongan dan pengukiran di workshop." },
+              { step: "01", title: "Konsultasi", desc: "Berdiskusi mengenai model, ukuran, and lokasi." },
+              { step: "02", title: "Desain & Estimasi", desc: "Kami buatkan draft desain and penawaran harga." },
+              { step: "03", title: "Produksi", desc: "Proses pemotongan and pengukiran di workshop." },
               { step: "04", title: "Instalasi", desc: "Pemasangan di lokasi Anda (Setting On Site)." }
             ].map((step, idx) => (
               <div key={idx} className="relative p-6 border border-white/10 rounded-2xl bg-white/5 group hover:bg-white/10 transition-colors">

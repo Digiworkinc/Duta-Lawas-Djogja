@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
-import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, Instagram, Facebook, MessageCircle, Compass, LayoutDashboard } from 'lucide-react';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -28,23 +27,22 @@ const Navbar = () => {
   const isAdmin = location.pathname.startsWith('/admin');
 
   return (
-    <nav className="sticky top-0 z-50 bg-[#fdfaf6]/95 backdrop-blur-sm border-b border-teak/10">
+    <nav className="sticky top-0 z-50 bg-[#fdfaf6]/95 backdrop-blur-sm border-b border-[#5d4037]/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
-              <span className="text-2xl font-bold font-serif text-teak tracking-tight">DK JATI</span>
+              <span className="text-2xl font-bold font-serif text-[#5d4037] tracking-tight">DK JATI</span>
             </Link>
           </div>
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-sm font-medium transition-colors hover:text-teak ${
-                  location.pathname === link.path ? 'text-teak font-bold' : 'text-gray-600'
+                className={`text-sm font-medium transition-colors hover:text-[#5d4037] ${
+                  location.pathname === link.path ? 'text-[#5d4037] font-bold' : 'text-gray-600'
                 }`}
               >
                 {link.name}
@@ -53,14 +51,14 @@ const Navbar = () => {
             <div className="flex items-center space-x-4 pl-4 border-l border-gray-200">
               <Link
                 to="/admin"
-                className={`p-2 rounded-full transition-colors ${isAdmin ? 'bg-teak text-white' : 'text-gray-400 hover:bg-gray-100 hover:text-teak'}`}
+                className={`p-2 rounded-full transition-colors ${isAdmin ? 'bg-[#5d4037] text-white' : 'text-gray-400 hover:bg-gray-100 hover:text-[#5d4037]'}`}
                 title="Panel Admin"
               >
                 <LayoutDashboard size={20} />
               </Link>
               <Link
                 to="/contact"
-                className="bg-teak text-white px-5 py-2.5 rounded-md text-sm font-medium hover:bg-teak/90 transition-all flex items-center space-x-2"
+                className="bg-[#5d4037] text-white px-5 py-2.5 rounded-md text-sm font-medium hover:bg-[#5d4037]/90 transition-all flex items-center space-x-2"
               >
                 <MessageCircle size={16} />
                 <span>Konsultasi</span>
@@ -68,14 +66,13 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-4">
-            <Link to="/admin" className="text-gray-400 hover:text-teak">
+            <Link to="/admin" className="text-gray-400 hover:text-[#5d4037]">
               <LayoutDashboard size={24} />
             </Link>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-600 hover:text-teak focus:outline-none"
+              className="text-gray-600 hover:text-[#5d4037] focus:outline-none"
             >
               {isOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
@@ -83,15 +80,14 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-[#fdfaf6] border-b border-teak/10 px-4 pt-2 pb-6 space-y-1 shadow-lg">
+        <div className="md:hidden bg-[#fdfaf6] border-b border-[#5d4037]/10 px-4 pt-2 pb-6 space-y-1 shadow-lg">
           {navLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
               onClick={() => setIsOpen(false)}
-              className="block px-3 py-3 text-base font-medium text-gray-700 hover:bg-teak/5 hover:text-teak rounded-md"
+              className="block px-3 py-3 text-base font-medium text-gray-700 hover:bg-[#5d4037]/5 hover:text-[#5d4037] rounded-md"
             >
               {link.name}
             </Link>
@@ -107,7 +103,7 @@ const Navbar = () => {
             <Link
               to="/contact"
               onClick={() => setIsOpen(false)}
-              className="w-full bg-teak text-white text-center py-3 rounded-md font-medium"
+              className="w-full bg-[#5d4037] text-white text-center py-3 rounded-md font-medium"
             >
               Konsultasi Gratis
             </Link>
@@ -119,7 +115,7 @@ const Navbar = () => {
 };
 
 const Footer = () => (
-  <footer className="bg-teak text-white pt-16 pb-8">
+  <footer className="bg-[#5d4037] text-white pt-16 pb-8">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
       <div className="space-y-4">
         <h3 className="text-2xl font-serif font-bold italic tracking-tighter">DK JATI</h3>
@@ -139,7 +135,6 @@ const Footer = () => (
           <li><Link to="/about" className="hover:text-white transition-colors">Tentang Kami</Link></li>
           <li><Link to="/services" className="hover:text-white transition-colors">Layanan</Link></li>
           <li><Link to="/portfolio" className="hover:text-white transition-colors">Portofolio</Link></li>
-          <li><Link to="/admin" className="hover:text-white transition-colors">Admin Panel</Link></li>
         </ul>
       </div>
       <div>
@@ -149,7 +144,6 @@ const Footer = () => (
           <li>Joglo & Limasan</li>
           <li>Gazebo & Pendopo</li>
           <li>Bongkar Pasang Bangunan</li>
-          <li>Furnitur Ukir Jati</li>
         </ul>
       </div>
       <div>
@@ -174,17 +168,17 @@ const Footer = () => (
 
 export default function App() {
   const [projects, setProjects] = useState<Project[]>(() => {
-    const saved = localStorage.getItem('dk_jati_projects');
+    const saved = localStorage.getItem('dk_jati_projects_v2');
     return saved ? JSON.parse(saved) : INITIAL_PROJECTS;
   });
 
   const [services, setServices] = useState<Service[]>(() => {
-    const saved = localStorage.getItem('dk_jati_services');
+    const saved = localStorage.getItem('dk_jati_services_v2');
     return saved ? JSON.parse(saved) : INITIAL_SERVICES;
   });
 
   const [prices, setPrices] = useState<PriceItem[]>(() => {
-    const saved = localStorage.getItem('dk_jati_prices');
+    const saved = localStorage.getItem('dk_jati_prices_v2');
     return saved ? JSON.parse(saved) : INITIAL_PRICES;
   });
 
@@ -194,15 +188,15 @@ export default function App() {
   });
 
   useEffect(() => {
-    localStorage.setItem('dk_jati_projects', JSON.stringify(projects));
+    localStorage.setItem('dk_jati_projects_v2', JSON.stringify(projects));
   }, [projects]);
 
   useEffect(() => {
-    localStorage.setItem('dk_jati_services', JSON.stringify(services));
+    localStorage.setItem('dk_jati_services_v2', JSON.stringify(services));
   }, [services]);
 
   useEffect(() => {
-    localStorage.setItem('dk_jati_prices', JSON.stringify(prices));
+    localStorage.setItem('dk_jati_prices_v2', JSON.stringify(prices));
   }, [prices]);
 
   useEffect(() => {
@@ -210,7 +204,7 @@ export default function App() {
   }, [adminPassword]);
 
   return (
-    <Router>
+    <HashRouter>
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow">
@@ -251,6 +245,6 @@ export default function App() {
           </span>
         </a>
       </div>
-    </Router>
+    </HashRouter>
   );
 }
