@@ -1,0 +1,9 @@
+{
+  "name": "DK Jati (Duta Lawas) - Digiwork-Web Subproject",
+  "description": "Premium Wooden Architecture and Joglo Specialist website, hosted under Digiwork-Web repository.",
+  "version": "1.1.0",
+  "author": "DK Jati Team",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
